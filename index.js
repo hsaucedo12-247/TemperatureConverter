@@ -6,8 +6,10 @@
  * @returns {number} temperature in °C
  */
 function convertToCelsius(f) {
+  return (5/9) * (f-32);
   // TODO
 }
+let value = convertToCelsius();
 
 /**
  * | Temperature | Description |
@@ -22,9 +24,27 @@ function convertToCelsius(f) {
  * @returns {string} the description from the table above corresponding to
  * the given Fahrenheit temperature `f`
  */
-function describeTemperature(f) {
-  // TODO
+function createMessage(f) {
+  let message = '';
+  const temperature = (5/9) * (f-32);
+  
+  if(temperature < 32) {
+    message = 'very cold'
+  } else if(temperature < 64) {
+    message = 'cold';
+  } else if(temperature < 86) {
+    message = 'warm';
+  } else if(temperature < 100) {
+    message = 'hot';
+  } else if(temperature >= 100) {
+    message = 'hot';
+  }
+
+  return `${celsius} celsius is ${temperature} temperature. ${message}`;
+
 }
+  // TODO
+
 
 /**
  * @param {number} limit
@@ -33,6 +53,9 @@ function describeTemperature(f) {
 function getRandomInt(limit) {
   // TODO
 }
+
+let convertToCelsius = prompt('enter a number, we will convert that number from Farenheit to celsius');
+console.log
 
 // -------------------- DO NOT CHANGE THE CODE BELOW ---------------------- //
 /**
